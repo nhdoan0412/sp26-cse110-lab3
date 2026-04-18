@@ -2,19 +2,27 @@
 <html lang="en">
   <head>
     <title>Team 7 Meeting Minutes</title>
-    <meta charset="UTF-8"> <!--  to set the character set to be UTF-8, which includes most characters from written languages  -->
-    <meta name="description" content="Meeting minutes for Team 7 Lab 2 project discussion"> <!-- brief description of the webpage for search engines -->
-    <link rel="icon" href="screenshots/diagram.jpg"> <!-- sets the small icon shown in the browser tab -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Meeting minutes for Team 7 Lab 2 project discussion">
+    <link rel="icon" href="screenshots/diagram.jpg">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+      .internal-style-note {
+        letter-spacing: 0.03em;
+        background-color: #fff7dd;
+      }
+    </style>
   </head>
   <body>
-    <header>
+    <header id="page-top">
       <h1>Team 7 Meeting Minutes</h1>
-      <p><strong>Project:</strong> Study Buddy App</p> <!--marks text as strong importance-->
-      <p><b>Meeting Type:</b> Brainstorming and task planning</p>
+      <p class="internal-style-note"><strong>Project:</strong> Study Buddy App</p>
+      <p style="border-left: 4px solid orange; padding-left: 0.75rem;"><b>Meeting Type:</b> Brainstorming and task planning</p>
 
-      <nav> <!--represents a navigation section-->
+      <nav>
         <ul>
-          <li><a href="#attendance">Attendance</a></li> <!-- for a: creates a link-->
+          <li><a href="#attendance">Attendance</a></li>
           <li><a href="#agenda">Agenda</a></li>
           <li><a href="#unfinished">Unfinished Business</a></li>
           <li><a href="#new">New Business</a></li>
@@ -24,12 +32,13 @@
         </ul>
       </nav>
 
-      <hr> <!-- create horizontal line-->
+      <hr>
     </header>
 
-    <main>
+    <main class="page-shell">
       <section>
         <h2>Meeting Information</h2>
+        <p class="sticky-note">Reminder: keep the first release small and focused.</p>
         <h3>Date</h3>
         <p>April 7, 2026</p>
 
@@ -37,7 +46,7 @@
         <p>Initial planning for features, team roles, and timeline.</p>
       </section>
 
-      <section id="attendance"> <!--hyperlink above jumps to <section id="attendance">-->
+      <section id="attendance">
         <h2>Attendance List</h2>
         <ul>
           <li>Nhan</li>
@@ -72,18 +81,18 @@
           </p>
 
           <p>
-            One idea was to include a <em>calendar page</em> for due dates and a <!--emphasis on words-->
+            One idea was to include a <em>calendar page</em> for due dates and a
             <em>discussion board</em> where students can post study session plans.
           </p>
 
-          <p>
+          <p class="special-note">
             Alex suggested that the first version should stay <i>simple</i> and focus on
-            core features only.<br><!--break a line-->
+            core features only.<br>
             Maria agreed and said the team should avoid making the project too large.
           </p>
 
           <p>
-            Kevin emphasized the importance of <span>clear task ownership</span> so everyone
+            Kevin emphasized the importance of <span class="inline-chip">clear task ownership</span> so everyone
             knows what they are responsible for.
           </p>
         </div>
@@ -106,7 +115,7 @@
           Another concern was whether the team should use plain HTML first before moving to more advanced tools later.
         </p>
 
-        <details> <!--creates a collapsible area that the user can open and close-->
+        <details>
           <summary>Extra meeting note</summary>
           <p>
             The team agreed that for now, focusing on a clean and working basic version is more important than adding extra features.
@@ -118,7 +127,7 @@
         <h2>Pictures and Media</h2>
 
         <h3>Whiteboard / Diagram</h3>
-        <img src="screenshots/diagram.jpg" alt="Whiteboard sketch of the Study Buddy App feature layout" width="300">
+        <img src="screenshots/diagram.jpg" alt="Whiteboard sketch of the Study Buddy App feature layout">
 
         <p>
           The image above represents a rough discussion of the app structure, including a homepage,
@@ -126,7 +135,7 @@
         </p>
 
         <h3>Audio Recording</h3>
-        <audio controls> <!--add built-in pause/volume controls-->
+        <audio controls>
           <source src="assets/bird-sound.m4a" type="audio/mp4">
           Your browser does not support the audio element.
         </audio>
@@ -134,7 +143,7 @@
         <p>Replace this file with your own short meeting audio recording later.</p>
 
         <h3>Video Recording</h3>
-        <video controls width="320">
+        <video controls>
           <source src="assets/VitaSync.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -142,11 +151,11 @@
         <p>Replace this file with your own short meeting video recording later.</p>
       </section>
 
-      <section>
+      <section class="reference-card">
         <h2>Reference Links</h2>
         <p>
           Team shared a sample inspiration link:
-          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML Reference</a> <!--target = blank lets open the link in a new tab-->
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML Reference</a>
         </p>
       </section>
 
@@ -154,7 +163,7 @@
         <h2>Simple Team Feedback Form</h2>
 
         <form>
-          <fieldset> <!--title for the <fieldset>-->
+          <fieldset>
             <legend>Submit Your Feedback</legend>
 
             <p>
@@ -213,7 +222,7 @@
               <textarea id="notes" name="notes" rows="4" cols="40"></textarea>
             </p>
 
-            <button type="submit">Submit</button>
+            <button type="submit" class="action-btn">Submit</button>
           </fieldset>
         </form>
       </section>
@@ -223,6 +232,7 @@
       <hr>
       <p>Created for CSE 110 Lab 2</p>
       <p>Last updated: April 7, 2026</p>
+      <p class="hidden-helper">Hidden helper text for display:none.</p>
     </footer>
   </body>
 </html>
