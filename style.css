@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 
+/* Biến CSS dùng để gom các màu sắc, kích thước và shadow để tái sử dụng nhiều lần */
 :root {
   --page-bg: #f4f7fb;
   --surface: #ffffff;
@@ -14,15 +15,17 @@
   --shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
 }
 
-/* universal selector */
+/* Universal selector: áp dụng box-sizing cho toàn bộ phần tử để width/padding dễ kiểm soát hơn */
 * {
   box-sizing: border-box;
 }
 
+/* Tạo hiệu ứng cuộn mượt khi bấm các liên kết điều hướng trong trang */
 html {
   scroll-behavior: smooth;
 }
 
+/* Thiết lập nền, màu chữ chính, font chung và chiều rộng tối thiểu cho toàn trang */
 body {
   margin: 0;
   background-color: var(--page-bg);
@@ -32,7 +35,7 @@ body {
   line-height: 1.65;
 }
 
-/* ID selector */
+/* ID selector: cố định phần đầu trang khi cuộn, đồng thời thêm nền, border và shadow */
 #page-top {
   position: sticky;
   top: 0;
@@ -42,7 +45,7 @@ body {
   box-shadow: var(--shadow);
 }
 
-/* class selector */
+/* Class selector: giới hạn chiều rộng phần nội dung chính và căn giữa bằng margin auto */
 .page-shell {
   width: 92vw;
   max-width: var(--page-width, 74rem); 
@@ -50,23 +53,26 @@ body {
   padding: 0 0.75rem 1.5rem 0.75rem;
 }
 
-/* selector list */
+/* Selector list: áp dụng canh giữa chữ cho cả header và footer cùng lúc */
 header, footer {
   text-align: center;
 }
 
+/* Chỉnh khoảng cách và cỡ chữ cho tiêu đề chính */
 header h1 {
   margin-top: 0.9rem;
   margin-bottom: 0.35rem;
   font-size: 2rem; 
 }
 
+/* Chỉnh khoảng cách và màu chữ phụ cho các đoạn văn trong header */
 header p {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   color: var(--text-muted);
 }
 
+/* Tạo đường kẻ ngang mềm hơn cho header và footer */
 header hr,
 footer hr {
   border: 0;
@@ -74,12 +80,13 @@ footer hr {
   margin: 1rem 0 0 0;
 }
 
+/* Cho khu vực nav hiển thị như block và có khoảng đệm xung quanh */
 nav {
   display: block;
   padding: 0.6rem 1rem 1rem 1rem;
 }
 
-
+/* Flexbox: sắp xếp danh sách liên kết điều hướng theo hàng, tự xuống dòng khi màn hình hẹp */
 nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -90,10 +97,12 @@ nav ul {
   margin: 0;
 }
 
+/* Mỗi mục trong nav được hiển thị kiểu inline-block để dễ điều khiển khoảng cách */
 nav li {
   display: inline-block;
 }
 
+/* Trang trí cho các link điều hướng: nền, màu, border, bo góc, padding */
 nav a {
   display: inline-block;
   background-color: #fff;
@@ -105,17 +114,19 @@ nav a {
   font-weight: 700;
 }
 
+/* Pseudo-class hover: đổi nền và màu chữ khi rê chuột vào link */
 nav a:hover {
   background-color: var(--accent-blue);
   color: #fff;
 }
 
+/* Pseudo-class active: đổi màu khi người dùng đang bấm vào link */
 nav a:active {
   background-color: #274fbe;
   color: #fff;
 }
 
-/* descendant combinator */
+/* Descendant combinator: áp dụng style cho mọi section nằm bên trong main */
 main section {
   background-color: var(--surface, #fff);
   border-radius: 18px;
@@ -125,7 +136,7 @@ main section {
   position: relative;
 }
 
-/* child combinator */
+/* Child combinator: chỉ chọn h2 là con trực tiếp của section */
 section > h2 {
   margin-top: 0;
   margin-bottom: 0.7rem;
@@ -134,24 +145,24 @@ section > h2 {
   text-decoration-color: color(display-p3 0.26 0.43 0.92 / 1);
 }
 
-/* general sibling combinator */
+/* General sibling combinator: mọi p đứng sau h2 trong cùng section sẽ dùng màu chữ phụ */
 h2 ~ p {
   color: var(--text-muted);
 }
 
-/* adjacent sibling combinator */
+/* Adjacent sibling combinator: đoạn p ngay sau summary sẽ có viền trái để nổi bật ghi chú */
 summary + p {
   border-left: 4px solid var(--accent);
   padding-left: 0.8rem;
 }
 
-/* attribute selectors */
+/* Attribute selectors: chọn các thẻ a có target="_blank" hoặc link https để chỉnh khoảng cách gạch chân */
 a[target="_blank"],
 a[href^="https"] {
   text-underline-offset: 0.2em;
 }
 
-/* combining selectors */
+/* Combining selectors: chỉ áp dụng cho button có class action-btn */
 button.action-btn {
   background-color: var(--accent-green);
   color: #fff;
@@ -162,15 +173,17 @@ button.action-btn {
   cursor: pointer;
 }
 
+/* Hover cho nút submit */
 button.action-btn:hover {
   background-color: #155f4b;
 }
 
+/* Active cho nút submit để tạo cảm giác nút bị nhấn xuống */
 button.action-btn:active {
   transform: scale(0.98);
 }
 
-/* longhand margin */
+/* Longhand margin: viết riêng từng cạnh của margin cho đoạn special-note */
 #new p.special-note {
   margin-top: 0.9rem;
   margin-right: 0;
@@ -178,7 +191,7 @@ button.action-btn:active {
   margin-left: 0;
 }
 
-/* longhand padding */
+/* Longhand padding: viết riêng từng cạnh của padding cho fieldset */
 fieldset {
   padding-top: 1rem;
   padding-right: 1rem;
@@ -186,7 +199,7 @@ fieldset {
   padding-left: 1rem;
 }
 
-/* longhand border */
+/* Longhand border: viết riêng style, color, width, radius cho reference-card */
 .reference-card {
   border-style: solid;
   border-color: #cfe0ff;
@@ -194,12 +207,14 @@ fieldset {
   border-radius: 1rem;
 }
 
+/* Chọn section đầu tiên để tạo phần mở đầu khác màu nhẹ */
 section:nth-of-type(1) {
   background-color: var(--surface-soft);
 }
 
+/* Grid layout: hiển thị danh sách attendance thành dạng lưới 2 cột */
 #attendance ul {
-  display: grid; /* grid layout */
+  display: grid;
   grid-template-columns: repeat(2, minmax(8rem, 1fr));
   gap: 0.8rem;
   justify-items: stretch;
@@ -208,6 +223,7 @@ section:nth-of-type(1) {
   padding-left: 0;
 }
 
+/* Style cho từng ô tên trong danh sách attendance */
 #attendance li {
   background-color: #eef4ff;
   border: 2px solid #d5e3ff;
@@ -217,7 +233,7 @@ section:nth-of-type(1) {
   min-height: 3.3rem;
 }
 
-/* element selector */
+/* Element selector: áp dụng cho toàn bộ thẻ img để ảnh co giãn đẹp hơn */
 img {
   width: 100%;
   max-width: 420px;
@@ -227,16 +243,19 @@ img {
   border: 3px solid #d7e3f6;
 }
 
+/* Chỉnh audio và video không vượt quá khung nội dung */
 audio,
 video {
   width: 100%;
   max-width: 36rem;
 }
 
+/* Thiết lập width cho bảng nếu sau này có thêm table */
 table {
   width: 100%;
 }
 
+/* Tạo nền và viền cho khối details */
 details {
   background-color: #f8fbff;
   border: 1px solid #d7e6fa;
@@ -244,15 +263,18 @@ details {
   padding: 0.8rem;
 }
 
+/* Làm summary giống tiêu đề nhỏ có thể click */
 summary {
   cursor: pointer;
   font-weight: 700;
 }
 
+/* Hiển thị span theo dạng inline */
 span {
   display: inline;
 }
 
+/* Hiển thị chip nhỏ theo dạng inline-block để vừa nằm cùng dòng vừa có padding */
 .inline-chip {
   display: inline-block;
   background-color: #edf4ff;
@@ -261,10 +283,12 @@ span {
   color: #264c95;
 }
 
+/* Ẩn hoàn toàn phần tử khỏi giao diện */
 .hidden-helper {
   display: none;
 }
 
+/* Sticky note: ghi chú bám theo khi cuộn xuống trang */
 .sticky-note {
   position: sticky;
   top: 5.7rem;
@@ -274,10 +298,12 @@ span {
   padding: 0.75rem;
 }
 
+/* Cho section media làm mốc định vị cho pseudo-element */
 #media {
   position: relative;
 }
 
+/* Tạo nhãn "Media" bằng pseudo-element trước nội dung section */
 #media::before {
   content: "Media";
   position: absolute;
@@ -291,18 +317,19 @@ span {
   font-weight: 700;
 }
 
+/* Bổ sung viền trái nổi bật cho khối reference-card */
 .reference-card {
   border-left: 0.25cm solid #4f7cff; 
   padding-left: 1rem;
 }
 
-/* :has() selector */
+/* :has() selector: section nào chứa video hoặc audio sẽ đổi nền */
 section:has(video),
 section:has(audio) {
   background-color: color-mix(in srgb, white 86%, #e8f1ff 14%);
 }
 
-/* form styling */
+/* Style chung cho input, select, textarea trong form */
 input,
 select,
 textarea {
@@ -314,15 +341,18 @@ textarea {
   background-color: white;
 }
 
+/* Riêng radio và checkbox thì không cho kéo full width */
 input[type="radio"],
 input[type="checkbox"] {
   width: auto;
 }
 
+/* Làm label đậm hơn để dễ đọc */
 label {
   font-weight: 600;
 }
 
+/* Khi focus vào ô nhập liệu thì hiện outline để người dùng dễ thấy đang nhập ở đâu */
 input:focus,
 select:focus,
 textarea:focus {
@@ -330,18 +360,19 @@ textarea:focus {
   border-color: #6e97ff;
 }
 
-/* new colors demo */
+/* Dùng màu mới để làm nổi bật đoạn special-note */
 .special-note {
   color: color(display-p3 0.22 0.38 0.92 / 1);
   background-color: hsla(217, 100%, 97%, 0.95);
 }
 
+/* Chỉnh khoảng đệm và màu chữ cho footer */
 footer {
   padding: 1rem 1rem 1.3rem 1rem;
   color: var(--text-muted);
 }
 
-/* nested selectors */
+/* Nested selectors: gom các style liên quan đến #form vào cùng một khối */
 #form {
   & label {
     color: #24447f;
@@ -356,7 +387,7 @@ footer {
   }
 }
 
-/* Media queries */
+/* Media query cho màn hình trung bình */
 @media (max-width: 820px) {
   .page-shell {
     width: 95vw;
@@ -367,6 +398,7 @@ footer {
   }
 }
 
+/* Media query cho màn hình nhỏ như điện thoại */
 @media (max-width: 560px) {
   nav ul {
     flex-direction: column;
